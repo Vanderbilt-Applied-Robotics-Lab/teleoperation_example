@@ -1,6 +1,6 @@
 #include <teleop_example/teleop_example.h>
 
-TeleopExample::TeleopExample(rclcpp::NodeOptions options) : Node("teleop_example", options)
+TeleopExample::TeleopExample() : Node("teleop_example")
 {
     // setup subscriber for joystick
     joystick_sub_ = this->create_subscription<sensor_msgs::msg::Joy>(
@@ -49,13 +49,9 @@ int main(int argc, char** argv)
 {
     // initialize the node
     rclcpp::init(argc, argv);
-
-    rclcpp::NodeOptions options;
-
-    options.automatically_declare_parameters_from_overrides(true);
     
     // create instance of class
-    auto node = std::make_shared<TeleopExample>(options);
+    auto node = std::make_shared<TeleopExample>();
     rclcpp::sleep_for(std::chrono::seconds(2));
 
     // Set loop rate

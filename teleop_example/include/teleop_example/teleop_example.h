@@ -11,9 +11,8 @@ class TeleopExample : public rclcpp::Node
 public:
     /**
      * Main constructor
-     * @param options Node options
      */
-    TeleopExample(rclcpp::NodeOptions options);
+    TeleopExample();
 
     /**
      * Destructor
