@@ -6,6 +6,10 @@
 #include <sensor_msgs/msg/joy.hpp>
 #include <cmath>
 
+/**
+ * Teleoperation example
+ * Applied Robotics
+ */
 class TeleopExample : public rclcpp::Node
 {
 public:
@@ -19,14 +23,16 @@ public:
      */
     ~TeleopExample() = default;
 
-
+    /**
+     * Main telemanipulation function. converts the joystick readings to a twist
+     */
     void mainTelemanipulation();
     
 private:
 
     /**
-     * Computes the average value of an array
-     * @param array The array to compute the average of
+     * Callback for the /joy topic
+     * @param msg the message on the /joy topic 
      */
     void joystickCallback(const sensor_msgs::msg::Joy& msg);
 
