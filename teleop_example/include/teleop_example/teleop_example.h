@@ -25,15 +25,23 @@ public:
     
 private:
 
+    /**
+     * Computes the average value of an array
+     * @param array The array to compute the average of
+     */
     void joystickCallback(const sensor_msgs::msg::Joy& msg);
 
     // subscriber for joystick
+    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joystick_sub_;
 
     // publisher for twist
+    rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr twist_publisher_;
 
     // twist message to publish
+    geometry_msgs::msg::TwistStamped twist_msg_;
 
-    // linear and angular gains 
+    double lin_gain_ = 0.05; // 10 mm/s max velocity
+    double ang_gain_ = 0.1; // 10 rad/s max velocity
     
 };
 
