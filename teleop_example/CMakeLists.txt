@@ -9,7 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 ## INCLUDE(S)
 include_directories(include)
@@ -18,7 +18,7 @@ include_directories(include)
 add_executable(teleop_example src/teleop_example.cpp)
 
 # dependencies
-ament_target_dependencies(teleop_example rclcpp sensor_msgs sensor_msgs)
+ament_target_dependencies(teleop_example rclcpp sensor_msgs geometry_msgs)
 
 install(TARGETS teleop_example
   DESTINATION lib/${PROJECT_NAME})
