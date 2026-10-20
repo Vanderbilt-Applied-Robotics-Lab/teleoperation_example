@@ -3,7 +3,7 @@ Example of using ROS2 servo to telemanipulate the meca500 robot
 
 ## Downloading Code
 1. Navigate to examples workspace source folder: `cd ~/workspaces/examples_ws/src`
-2. Download code: `git clone https://github.com/Vanderbilt-Applied-Robotics-Lab/joint_space_control_example.git`
+2. Download code: `git clone https://github.com/Vanderbilt-Applied-Robotics-Lab/teleoperation_example.git`
 
 ## Compiling Code
 1. Navigate to examples workspace: `cd ~/workspaces/examples_ws`
